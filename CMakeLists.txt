@@ -13,6 +13,20 @@ target_link_libraries(${PROJECT_NAME}
     INTERFACE nodec
 )
 
+option(NODEC_SCENE_ENABLE_SERIALIZATION OFF)
+
+if(NODEC_SCENE_ENABLE_SERIALIZATION)
+    target_include_directories(
+        ${PROJECT_NAME}
+        INTERFACE serialization
+    )
+
+    target_link_libraries(${PROJECT_NAME}
+        INTERFACE
+        nodec_scene_serialization
+    )
+endif()
+
 # Tests
 option(NODEC_SCENE_BUILD_TESTS "Enable buidling tests." OFF)
 
