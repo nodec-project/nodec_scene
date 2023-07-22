@@ -1,10 +1,10 @@
-#ifndef NODEC_SERIALIZATION__NODEC_SCENE__COMPONENTS__LOCAL_TRANSFORM_HPP_
-#define NODEC_SERIALIZATION__NODEC_SCENE__COMPONENTS__LOCAL_TRANSFORM_HPP_
+#ifndef NODEC_SCENE__SERIALIZATION__COMPONENTS__LOCAL_TRANSFORM_HPP_
+#define NODEC_SCENE__SERIALIZATION__COMPONENTS__LOCAL_TRANSFORM_HPP_
 
+#include <nodec/serialization/quaternion.hpp>
+#include <nodec/serialization/vector3.hpp>
 #include <nodec_scene/components/local_transform.hpp>
 #include <nodec_scene_serialization/serializable_component.hpp>
-#include <nodec_serialization/nodec/quaternion.hpp>
-#include <nodec_serialization/nodec/vector3.hpp>
 
 namespace nodec_scene {
 namespace components {

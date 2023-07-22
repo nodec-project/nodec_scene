@@ -1,5 +1,5 @@
-#ifndef NODEC_SERIALIZATION__NODEC_SCENE__COMPONENTS__NAME_HPP_
-#define NODEC_SERIALIZATION__NODEC_SCENE__COMPONENTS__NAME_HPP_
+#ifndef NODEC_SCENE__SERIALIZATION__COMPONENTS__NAME_HPP_
+#define NODEC_SCENE__SERIALIZATION__COMPONENTS__NAME_HPP_
 
 #include <nodec_scene/components/name.hpp>
 #include <nodec_scene_serialization/serializable_component.hpp>
