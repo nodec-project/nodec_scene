@@ -41,6 +41,15 @@ public:
         archive(cereal::make_nvp("scale", scale));
     }
 };
+
+template<class Archive>
+void serialize(Archive &archive, LocalTransform &transform) {
+    archive(cereal::make_nvp("position", transform.position));
+    archive(cereal::make_nvp("rotation", transform.rotation));
+    archive(cereal::make_nvp("scale", transform.scale));
+    transform.dirty = true;
+}
+
 } // namespace components
 } // namespace nodec_scene
 
