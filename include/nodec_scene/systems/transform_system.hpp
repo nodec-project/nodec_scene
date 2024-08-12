@@ -3,7 +3,7 @@
 
 #include <cassert>
 
-#include <nodec/math/gfx.hpp>
+#include <nodec/gfx/gfx.hpp>
 #include <nodec/math/math.hpp>
 #include <nodec/matrix4x4.hpp>
 
@@ -30,7 +30,7 @@ inline void update_transform(SceneRegistry &registry,
     auto *local_trfm = registry.try_get_component<LocalTransform>(entity);
 
     if (local_trfm && local_trfm->dirty) {
-        local_to_world.value = parent_local_to_world * math::gfx::trs(local_trfm->position, local_trfm->rotation, local_trfm->scale);
+        local_to_world.value = parent_local_to_world * gfx::trs(local_trfm->position, local_trfm->rotation, local_trfm->scale);
         local_trfm->dirty = false;
         local_to_world.dirty = false;
         dirty = true;
@@ -41,13 +41,13 @@ inline void update_transform(SceneRegistry &registry,
         // update local transform if any.
         if (local_trfm) {
             auto delta = math::inv(parent_local_to_world) * local_to_world.value;
-            if (!math::gfx::decompose_trs(delta, local_trfm->position, local_trfm->rotation, local_trfm->scale)) {
+            if (!gfx::decompose_trs(delta, local_trfm->position, local_trfm->rotation, local_trfm->scale)) {
                 assert(false);
             }
         }
     } else {
         if (dirty && local_trfm) {
-            local_to_world.value = parent_local_to_world * math::gfx::trs(local_trfm->position, local_trfm->rotation, local_trfm->scale);
+            local_to_world.value = parent_local_to_world * gfx::trs(local_trfm->position, local_trfm->rotation, local_trfm->scale);
         }
     }
 
